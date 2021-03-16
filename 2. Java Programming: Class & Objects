@@ -1,1 +1,135 @@
 
+# Java Programming: Class & Objects
+
+[TOC]
+
+## Class Initialization
+> https://stackoverflow.com/questions/23093470/java-order-of-initialization-and-instantiation
+
+* Class is initialized **upon first access**
+* Steps of initialization
+  * Assigning compile time constant fields
+  * Recursively initializing the superclass (if not already initialized)
+  * Static initializers
+* Is not triggered by accessing compile time constants
+* Usually be triggered when accessing non-compile time constants
+
+## Initialization of Instance Variables
+
+* All are inherent from `java.lang.Object`
+  * by default, `toString()` is provided
+* Must be explicitly initialized
+* For instance variable, the value of a reference variable is `null` by default (by compiler)
+  * `int` / `char`: `0` / `\u0000`
+  * `boolean`: `false`
+* For local variable defined in a function scope, the default value is **garbage** 
+
+### Constructor
+
+* no return type
+* same name as the class (how about factory method?)
+  * can be overloaded
+* If constructor is defined, default constructor is created by Java
+  * This default constructor will call the no-argument constructor of the superclass
+
+
+## Variable Copying
+
+### Primitive Type
+
+* Copying
+
+### Non-primitive Type
+
+* Referencing
+* The object that no longer be referenced will be `recycled` by JVM
+  * Done by reference counting / stop-the-world garbage collection
+
+### Call-by-Value & Call-by-Reference
+
+* All Java methods are call-by-value, instead of call-by-reference. (from COMP201 Summer 2006)
+  * that means, all parameters' value are copied to method (including value of reference)
+
+
+## Garbage Collection
+* Objects are managed by JVM in the heap
+* Explicitly assigning `null` can help JVM to collect garbage
+
+## Memory
+* **`Stack`**: contain method-specific values that are short-lived, and references to other objects in the heap
+  * e.g. function call, local reference, primitive type values
+* **`Heap`**: contain all **object instances**
+* **`Literals`**: `string`, constant data
+
+## Static Variables
+
+* Variables shared by all class instance
+* Lives in `static data`
+
+## Class Variables
+* Variables that initialized when an class instance is created
+* live in heap
+ 
+## Static Methods
+* Including static function
+* Lives in static data
+* can only be accessed static variables
+* Static methods can only use static variables of the class, NOT non-static variables (i.e. instance variables).
+
+## Import Class from other packages
+* using fullname to avoid `import`
+
+```java
+java.util.Date date = new java.util.Date(); // java will know where to find
+```
+
+* using `import`:
+
+```java
+import java.util.*;
+
+Date date = new Date();
+```
+
+## Access Modifiers
+
+* `public`: public to all classes
+* `default`: only visible to it own package
+* `private`: only visible to its class
+
+:::info
+only `public` and `default` class can be defined.
+:::
+
+## Array
+
+> https://docstore.mik.ua/orelly/java/exp/ch04_06.htm
+
+* Array is `Object`, not primitive type
+* Elements in array are `null` by default
+  * Initialization is done for `Array`
+* **`{}`**: syntax sugar, which is a C-like method to initialize data members
+
+* Multidimensional array:
+  ```java
+  ChessPiece[][] chessBoard;
+  chessBoard = new ChessPiece [8][8];
+  chessBoard[0][0] = new ChessPiece( "Rook" ); 
+  chessBoard[1][0] = new ChessPiece( "Pawn" );
+  ```
+
+* Irregular 2D array
+  
+  ```java
+  int []][] triangle = new int [5][];
+  
+  for (int i = 0; i < triangle.length; i++) {    
+    triangle[i] = new int [i + 1];
+  }
+  ```
+
+## Immutable `Objects` and `Class`
+
+* Data members are immutable
+  * Even all data members are private, but reference of data member is returned
+  * Still mutable!
