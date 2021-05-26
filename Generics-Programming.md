@@ -1,5 +1,8 @@
 # Java Programming - Generics
 
+[![hackmd-github-sync-badge](https://hackmd.io/JOWpSyv5TJWWBp0-Y1SV4w/badge)](https://hackmd.io/JOWpSyv5TJWWBp0-Y1SV4w)
+
+
 ## Some Interesting from Java Official
 
 **Q: will the following code compile?**
