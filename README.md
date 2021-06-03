@@ -20,3 +20,19 @@ http://martin-mok-tin-kui.github.io/COMP3021-Java-Programming-Spring-2016/
 
 * mind your carefulness
 * not difficult, but the way they ask your questions are confusing
+
+## Final Exam
+
+The exam is divided into 2 parts - MCQs and Coding.
+
+MCQs is quite difficult even if you study hard, and coding part is pretty easy as long as you dun make any careless mistake.
+
+Part 1 Statistics:
+Mean: 29.7	High: 48	Low: 7.95
+
+Part 2 Statistics:
+Mean: 37.13	High: 45	Low: 16
+
+## Grade
+
+Not yet released so I cannot tell.
