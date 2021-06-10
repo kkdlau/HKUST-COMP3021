@@ -35,4 +35,4 @@ Mean: 37.13	High: 45	Low: 16
 
 ## Grade
 
-Not yet released so I cannot tell.
+I got A-, shitty grading lol.
